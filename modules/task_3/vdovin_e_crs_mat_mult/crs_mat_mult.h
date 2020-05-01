@@ -12,7 +12,7 @@
 #include <numeric>
 
 class CRSMatrix {
-public:
+ public:
     int n;
     int nz;
     int omp_k;
@@ -43,7 +43,7 @@ public:
 };
 
 class Multiplicator {
-public:
+ public:
     const CRSMatrix* a;
     const CRSMatrix* b;
 

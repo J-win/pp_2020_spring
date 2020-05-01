@@ -98,7 +98,7 @@ CRSMatrix CRSMatrix::multiplicate(const CRSMatrix &mtx) const {
         std::vector<std::vector<int>> col_res(n);
         std::vector<int> rownz(n + 1);
 
-        int grainsize = n / omp_k;
+        int grainsize = 4;
         tbb::parallel_for(tbb::blocked_range<int>(0, n, grainsize),
             Multiplicator(this, &mtx, value_res.data(), col_res.data(), rownz.data()));
 
